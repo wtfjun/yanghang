@@ -1,0 +1,52 @@
+//FileInoutStream、FileOutputStream及FileReader、FileWriter进行文件读写
+package window;
+
+import java.io.*;
+
+public class Main {
+	
+	public static void main(String args[]) throws IOException {		
+		FileOutputStream fw = new FileOutputStream("D://test.txt",false);
+		fw.write("0123456789\n".getBytes());
+		fw.close();
+		
+		FileInputStream fr = new FileInputStream("D://test.txt");
+		byte c[] = new byte[1024];
+		int i = fr.read(c);
+		System.out.println(new String(c,0,i));
+		fr.close();
+		
+	        /*FileWriter fw = new FileWriter("D://test.txt",false);
+		fw.write("0123456789\n");
+		fw.close();
+		
+		FileReader fr = new FileReader("D://test.txt");
+		char c[] = new char[1024];
+		int i = fr.read(c);
+		System.out.println(new String(c,0,i));
+		fr.close();*/
+	}
+}
+
+//TreeSet及其迭代
+package window;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class Main {
+	
+	public static void main(String args[]){		
+		TreeSet<Integer> set = new TreeSet<Integer>();
+		set.add(1);
+		set.add(2);
+		set.add(3);
+		set.add(4);
+		set.add(5);
+		set.add(6);
+		Iterator<Integer> it = set.iterator();
+		while(it.hasNext()) {
+			System.out.println(it.next());
+		}
+	}
+}

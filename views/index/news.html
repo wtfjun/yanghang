@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<title><%= title %></title>
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet/less" type="text/css" href="/css/style.less">
+  <script src="/javascripts/less.min.js"></script>
+</head>
+<body>
+<% include header.html %>
+
+<div class="erji-header-img"></div>
+
+	<div class="erji-fenye">
+		<div class="w1126">
+			<div class="left">
+				<div class="title">
+					<span class="en"><%= leftTitle %></span>
+					<span class="us"><%= leftTitleUs %></span>
+				</div>
+				<ul>
+					<li><button>公司新闻</button></li>
+				</ul>
+			</div>
+			<div class="right">
+				<div class="position">
+					<i class="fa fa-home fa-lg" style="color:#888;margin-right: 5px"></i>
+					<a href=""> 首页</a>
+					 > 
+					<a href="">新闻动态</a>
+					 > 
+					<a href="">公司新闻</a>
+				</div>
+				<ul>
+
+					<% for(var i=0; i < allNews.length; i++) {%>
+					<li>
+					  <i class="fa fa-file-text-o" style="color: #444;margin-right:5px;"></i> 
+						<a href=""><%= allNews[i].title %></a>
+						<% var time = allNews[i].create_at.toLocaleDateString() %>
+						<a class="time" href=""><%= time %></a>
+					</li>
+					<% } %> 
+					<li><i class="fa fa-file-text-o" style="color: #444;margin-right:5px;"></i> <a href="">sdawdwa</a> <a class="time">2015-5-8</a></li>
+					<li><i class="fa fa-file-text-o" style="color: #444;margin-right:5px;"></i> <a href="">sdawdwa</a> <a class="time">2015-5-8</a></li>
+					<li><i class="fa fa-file-text-o" style="color: #444;margin-right:5px;"></i> <a href="">sdawdwa</a> <a class="time">2015-5-8</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<% include footer.html %>
+</body>
+</html>

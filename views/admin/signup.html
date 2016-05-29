@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		<%= title %>
+	</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body style="background:url('/images/rebc.gif')">
+
+<div class="re_title"><h1>阳航科技后台管理系统</h1></div>
+<div class="re">
+	
+	<div class="left">
+		<form action="/signup" method="post">
+			<div class="left_con">
+				<span>新用户注册</span>
+				<input name="userid" type="text" placeholder="请输入用户名">
+				<input name="password"  type="password" placeholder="请输入密码">
+				<input name="re_pass" type="password" placeholder="请输入密码">
+				<button class="submit" style="submit"><a>注册</a></button>
+
+				<br>
+				<p style="font-size:12px;color:#888">
+				
+					<span>欢迎进入阳航科技后台管理系统!</span>
+			
+
+				<% if(typeof(error) !== 'undefined' && error){ %>
+					<span><%= error %></span>
+				<% } %>
+				</p>
+			</div>
+		</form>
+	</div>
+	<div class="right">
+		<div class="have">
+			<span>已有帐号</span> <a href="/signin">直接登录</a>
+		</div>
+		<div class="hezuo">合作方帐号登录</div>
+	</div>
+</div>
+
+<script>
+
+	function re() {
+		$.ajax({
+			url: '__CONTROLLER__/reAction',
+			type: 'POST',
+			//dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+			data: {
+				tel_number: $('#tel_number').val(),
+				password: $('#password').val(),
+			},
+			success:function(data) {
+				alert('注册成功');
+			},
+			error:function(data) {
+				alert('注册失败');
+			}
+		});
+	}
+		
+</script>
+</body>
+</html>

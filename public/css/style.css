@@ -1,0 +1,163 @@
+body,
+html {
+  font-size: 13px;
+}
+body {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  font-family: "微软雅黑";
+}
+span,
+p {
+  font-family: "微软雅黑";
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+}
+header {
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  min-width: 1200px;
+  background: #151515;
+}
+header nav i {
+  color: #666;
+}
+header .header_top {
+  height: 50px;
+  width: 1200px;
+  margin: 0 auto;
+}
+header .header_top .left {
+  line-height: 50px;
+  display: inline-block;
+}
+header .header_top .right {
+  line-height: 50px;
+  display: inline-block;
+  float: right;
+}
+header .nav_con {
+  width: 100%;
+  background: #fff;
+}
+header nav {
+  font-size: 16px;
+  height: 116px;
+  width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+}
+nav .logo {
+  width: 240px;
+  float: left;
+  height: 116px;
+  color: #000;
+}
+.header_nav ul li {
+  list-style-type: none;
+  text-align: center;
+  border-left: 1px solid #ebebeb;
+  width: 236px;
+  height: 116px;
+  float: left;
+}
+.header_nav ul li a {
+  display: block;
+}
+.header_nav ul li i {
+  margin-top: 28px;
+}
+.small_font {
+  font-size: 12px;
+  color: #999;
+}
+.re_title,
+.login_title {
+  color: #69D07A;
+  width: 820px;
+  margin: 0 auto;
+  margin-top: 120px;
+  text-align: center;
+}
+.re,
+.login {
+  width: 820px;
+  height: 475px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background: #fff;
+}
+.re .left,
+.login .left {
+  width: 410px;
+  float: left;
+}
+.re .left .left_con,
+.login .left .left_con {
+  padding: 40px 60px;
+}
+.re .left .left_con .submit,
+.login .left .left_con .submit {
+  width: 275px;
+  background: #69D07A;
+  color: #fff;
+  font-size: 16px;
+  border: 0px;
+  transition: all .4s;
+}
+.re .left .left_con .submit:hover,
+.login .left .left_con .submit:hover {
+  background: #90dc9c;
+}
+.re .left .left_con a,
+.login .left .left_con a {
+  color: #fff;
+  display: block;
+  line-height: 40px;
+}
+.re .left span,
+.login .left span,
+.re .left input,
+.login .left input {
+  display: block;
+  margin-bottom: 14px;
+}
+.re .left input,
+.login .left input {
+  width: 250px;
+  padding: 10px;
+  color: #666;
+}
+.re .left .get_code,
+.login .left .get_code {
+  position: absolute;
+  right: 23px;
+  top: 7px;
+  padding: 5px;
+  border: 0px;
+}
+.re .right,
+.login .right {
+  width: 410px;
+  float: left;
+  font-size: 16px;
+  margin-top: 100px;
+  text-align: center;
+}
+.re .right .have a,
+.login .right .have a {
+  color: #69D07A;
+}
+.re .right .hezuo,
+.login .right .hezuo {
+  margin-top: 50px;
+  font-size: 12px;
+  color: #999;
+}

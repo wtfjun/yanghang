@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>后台管理系统</title>
+<meta name="author" content="DeathGhost" />
+<link rel="stylesheet" type="text/css" href="/admin/css/style.css" />
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<script src="/admin/js/jquery.js"></script>
+<script src="/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+
+<body>
+
+
+<% include header.html %>
+
+<section class="rt_wrap content mCustomScrollbar">
+ <div class="rt_content">
+
+     <!-- <section>
+      <h2><strong style="color:grey;">常用按钮（水平块元素，无区域限制）</strong></h2>
+      <a class="link_btn" id="loading">点击加载</a>
+      <button class="link_btn" id="showPopTxt">测试弹出框</button>
+      <input type="button" value="按钮input" class="link_btn"/>
+     </section> -->
+      <!-- <section>
+      <h2><strong style="color:grey;">表单样式（组合）</strong></h2>
+      <input type="text" class="textbox" placeholder="默认宽度..."/>
+      <input type="text" class="textbox textbox_295" placeholder="class=295px..."/>
+      <input type="text" class="textbox textbox_225" placeholder="class=225px..."/>
+      <select class="select">
+       <option>下拉菜单</option>
+       <option>菜单1</option>
+      </select>
+      <input type="button" value="组合按钮" class="group_btn"/>
+           </section> 
+     <section>
+      <h2><strong style="color:grey;">页面标题及表格/分页（根据具体情况列入重点，切勿放置可扩展内容不定的数据）</strong></h2>-->
+      <div class="page_title">
+       <h2 class="fl">公司新闻</h2>
+      <a class="fr top_rt_btn" style="margin-top:5px;" href="/addNews">添加一条新闻</a> 
+      </div>
+
+      <table class="table">
+       <tr>
+        <th style="width:50px;">标题</th>
+        <th style="width:250px;">内容</th>
+        <th>创建时间</th>
+        <th>创建者</th>
+        <th style="width:200px;">操作</th>
+       </tr>
+        <% for(var i=0; i < allNews.length; i++) {%>
+        <tr style="text-align: center;">
+          <td style="height:50px; ">
+            <div class="cut_title ellipsis">
+              <%= allNews[i].title %>
+            </div>
+          </td>
+          
+          <td><%= allNews[i].desc.substring(3,10)+"..." %></td>
+          <% var time = allNews[i].create_at.toLocaleDateString() %>
+          <td><%= time %></td>
+          <td><%= allNews[i].author_id %></td>
+          <td>
+          <a href="/showReNews?id=<%= allNews[i]._id %>&title=<%= allNews[i].title %>&desc=<%= allNews[i].desc %>" class="inner_btn">编辑</a>
+          <% var id = allNews[i]._id; %>
+          <a href="/delNewsAction?id=<%= id %>" class="inner_btn">删除</a>
+         </td>
+        </tr>
+        <% } %>
+      </table>
+      <aside class="paging">
+       <a href="/admin?p=1">第一页</a>
+       <% for(var j=1; j<= Math.ceil(count/3); j++) { %>
+        <% if(current_page == j) { %>
+       <a href="/admin?p=<%= j %>" style="background:#f9f"><%= j %></a>
+        <% } %>
+        <% if(current_page != j) { %>
+       <a href="/admin?p=<%= j %>"><%= j %></a>
+        <% } %>
+       <% } %>
+       <a href="/admin?p=<%= Math.ceil(count/3) %>">最后一页</a>
+      </aside>
+     </section>
+     
+     
+    <!--结束：以下内容则可删除，仅为素材引用参考-->
+ </div>
+</section>
+</body>
+</html>
