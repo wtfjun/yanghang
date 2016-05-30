@@ -48,13 +48,13 @@ $(document).ready(function() {
 	});
 
 	/*自动轮播*/
-	auto = setInterval(function(){i++;move();},2000);
+	auto = setInterval(function(){i++;move();},5000);
 	/*鼠标停留 轮播暂停*/
 	$('.banner_cont').hover(function() {
 		/* Stuff to do when the mouse enters the element */
 		clearInterval(auto);
 	}, function() {
 		/* Stuff to do when the mouse leaves the element */
-		auto = setInterval(function(){i++;move();},2000);
+		auto = setInterval(function(){i++;move();},5000);
 	});	
 });
